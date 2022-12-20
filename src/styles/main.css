@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*
+   favorite
+*/
+
+.favorite {
+    font-size: 18px;
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    background-color: #203239;
+    color: white;
+    border: 0;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button, a, input, textarea{
+    padding: 44px;
+}
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background-color: #20272b;
+    color: white;
+    padding: 8px;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+#hamburger-container{
+    text-align: right;
+}
+
+#hamburger {
+    text-align: center;
+    font-size: 32px;
+    text-decoration: none;
+    color: black;
+}
+
+#drawer {
+    top: 0;
+    left: 0;
+    height: 100vh;
+    position: fixed;
+    transform: translate(-250px, 0);
+    transition: transform 0.3s ease-in-out;
+}
+#drawer ul {
+    height: 100%;
+    list-style-type: none;
+    padding: 0 16px;
+}
+
+#drawer li {
+    padding: 44px;
+}
+
+#drawer.open {
+    transform: translate(0,0)
+}
+
+@media screen and (min-width: 600px) {
+    #drawer {
+        height: auto;
+        position: relative;
+        transform: translate(0, 0);
+    }
+    #hamburger {
+        display: none;
+    }
+
+    nav{
+        flex-direction: row !important;
+    }
+    
+    nav ul{
+        flex-direction: row !important;
+        justify-content: space-between;
+    }
+
+    #drawer li {
+        padding: 5px 0px;
+    }
+}
+
+a{
+    text-decoration: none;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+nav{
+    background-color: #1B2430;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    width: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: none;
+}
+
+nav .logo{
+    text-align: center;
+    margin: 0 0 0 20px;
+}
+
+img {
+    display: block;
+}
+
+#explore-title{
+    text-align: center;
+    margin-top: 30px;
+}
+
+#explore{
+    margin: 30px;
+}
+
+main{
+    margin-bottom: 20px;
+}
+
+footer{
+    background-color: #1B2430;
+    color: whitesmoke;
+    font-weight: bold;
+    padding: 20px 0;
+}
+
+footer div{
+    text-align: center;
+}
+
+nav ul li a{
+    padding: 22px;
+    margin: 0 2px;
+    color: #EEEDDE;
+}
+
+#hero-element{
+    margin: 0 auto;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: bottom;
+    max-height: 500px;
+}
+
+#explore .container{
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: none;
+}
+#explore .container > div {
+    margin: 0 auto;
+    padding: 16px;
+}
+
+#restaurant-content img{
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+}
+#restaurant-content h2{
+    text-align: center;
+    margin: 20px;
+}
+
+#restaurant-content p{
+    margin: 20px 0 0;
+}
+#restaurant-detail{
+    margin: 20px;
+}
+
+#restaurant-detail .image-container{
+    display: flex;
+    justify-content: center;
+}
+
+#restaurant-detail img{
+    max-width: 100%;
+    object-fit: cover;
+    object-position: bottom;
+    max-height: 500px;
+}
+#restaurant-detail .content{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#restaurant-detail hr{
+    margin: 20px 0;    
+}
+
+#restaurant-detail #menus{
+    display: grid;
+    grid-template-columns: auto auto;
+    text-align: center;
+}
+
+#restaurant-detail #menus #foods{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+#restaurant-detail #menus #drinks{
+    margin-top: 20px;
+}
+
+#restaurant-detail #reviews{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+#restaurant-detail #reviews .review{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+@media screen and (min-width: 1260px) {
+    #explore .container{
+        grid-template-rows: none;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1260px){
+    #explore .container{
+        grid-template-rows: none;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Jika ukuran viewport >= 1200px maka minimal width 1000px */
+@media screen and (min-width: 1199px){
+    #hero-element{
+        margin: 12.5px auto;
+        min-width: 1000px;
+    }
+}
+
+/* Jika ukuran viewport < 1200px maka full width */
+@media screen and (max-width: 1199px){
+    #hero-element{
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    nav ul li a{
+        padding: 44px;
+        margin: 0 2px;
+        color: #EEEDDE;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #restaurant-detail #reviews{
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+}
